@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Practica 1</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css"> <!-- Una librería muy útil para el CSS -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+	<header class="site-header"> <!-- El id se usa para darle una identificación concreta a un etiqueta, los ID's no pueden ser reutilizables, solo puede haver uno por página-->
+		<div class="contenedor contenido-header">
+
+			<div class="barra"> <!-- La clase "barra" es el nuevo standard para posicionar elementos -->
+				<a href="index.html"> 
+					<img src="practica1/img/logo.svg" alt="Logotipo de Bienes Raices"> 
+				</a>
+
+				<div class="mobile-menu">
+					<a href="#navegacion">
+						<img src="practica1/img/barras.svg" alt="Icono Menú">
+					</a>
+				</div>
+
+				<nav id="navegacion" class="navegacion"> <!-- Es un contenedor que se usa para meter los enlaces de la página web-->
+					<a href="nosotros.html">Nosotros</a>
+					<a href="anuncios.html">Anuncios</a>
+					<a href="blog.html">Blog</a>
+					<a href="contacto.html">Contacto</a>
+				</nav>
+			</div> 
+		</div> <!-- contenedor -->
+	</header>
+
+	<h1 class="fw-300 centrar-texto"> Consejos para tener una Alberca en tu casa sin gastar demasiado</h1>	
+
+	<img src="practica1/img/destacada2.jpg" alt="Imagen Principal">
+
+	<main class="contenedor seccion contenido-centrado texto-entrada">
+
+		<p>Escrito el: <span>20/10/2019</span> por : <span>Admin</span></p>
+
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		
+		<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	</main>
+
+	<footer class="site-footer seccion"> <!--Esta etiqueta también se podría usar como footer de un contenedor-->
+		<div class="contenedor contenedor-footer">
+			<nav class="navegacion">
+				<a href="nosotros.html">Nosotros</a>
+				<a href="anuncios.html">Anuncios</a>
+				<a href="blog.html">Blog</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+
+			<p class="copyright">Todos los Derechos Reservados, 2020 &copy;</p>
+		</div>
+	</footer>
+</body>
+</html>

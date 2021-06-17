@@ -1,0 +1,494 @@
+
+
+
+html {
+	box-sizing: border-box; /* Hace que al modificar el ancho de alguna clase, el padding no afecte en el tamaño */
+	font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16 px **/
+}
+
+*, *:before, *:after {
+	box-sizing: inherit; /* Hace que al modificar el ancho de alguna clase, el padding no afecte en el tamaño */
+}
+
+body { /* Aplica los cambios a todos los elementos */
+	font-family: 'Lato', sans-serif; /* Modifica el tipo de letra */
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+
+/** Globales **/
+img {
+	max-width: 100%;
+}
+
+.contenedor {
+	max-width: 120rem; /** 120 rem = 1200 px */
+	margin: 0 auto; /* Es capaz de centrar sin necesidad de usar más de una etiqueta, los valores van en el sentido del reloj */
+	width: 95%;
+}
+
+h1 {
+	font-size: 3.8rem;
+}
+
+h2 {
+	font-size: 3.4rem;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+h4 {
+	font-size: 2.6rem;
+}
+
+/** Utilidades - Útil para reutilizar código y no repetirlo **/
+.seccion {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.fw-300 {
+	font-weight: 300; /* Modifica el ancho de la letra */
+}
+
+.centrar-texto {
+	text-align: center;
+}
+
+.d-block {
+	display: block!important; /* Al haver un display:inline-block en el mismos contenedor, el CSS cogerá el último display que se haya escrito, con el !important le das prioridad sobre los demás*/
+}
+
+.contenido-centrado {
+	max-width: 80rem;
+}
+
+/** Botones **/
+.boton {
+	color: white;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 1.8rem;
+	padding: 1rem 3rem;
+	margin-top: 3rem;
+	display: inline-block; /* Los enlaces tienen un display: in-line, y si le intentas añadir un margin no te lo aceptará a menos que se lo quites, los enlaces e imagenes se usan display: inline-block */
+	text-align: center;
+	border: none; /* Para eliminar el borde del submit */
+	display: block;
+	flex: 0 0 100%; /* Esto se necesita cuando es hijo de un display flex para que tome todo el espacio disponible */
+}
+
+@media (min-width: 768px){
+	.boton {
+		display: inline-block;
+		flex: 0 0 auto;
+	}
+}
+
+.boton:hover {
+	cursor: pointer; /* Este comando hace que cuando la clase tenga un hover aparezca la mano seleccionadora */
+}
+
+.boton-amarillo {
+	background-color: #E08709;
+}
+
+.boton-verde {
+	background-color: #71B100;
+}
+
+
+/* Header */
+.site-header {
+	background-color: #333333;
+	padding: 1rem 0 3rem 0;
+}
+
+.site-header.inicio{ /* De esta manera puedes darle froma a dos clases a la vez */
+	background-image: url(practica1/img/header.jpg); /* Añade la imagen como fondo */
+	background-position: center center; /* Posiciona al BackGround, en este caso la posiciona en el centro y la expande */
+	background-size: cover; /* Fuerza que tome todo el espacio disponible tanto en ancho como en altura pero respetando las dimensiones */
+	height: 100vh; /* Vh calcula la altura dependiendo de tu pantalla */
+	min-height: 60rem; /* Esto hace que como mínimo se muestre el header en 600px para que no se vea mal */
+}
+
+.contenido-header {
+	height: 100%;
+	display: flex; /* Hay que decirle en que dirección queremos el display */
+	flex-direction: column; /* Ordena la dirección de flex-box de arriba hacia abajo */
+	justify-content: space-between; /* Permite alinear una parte a la derecha y otra a la izquierda*/
+	text-align: center;
+}
+
+@media (min-width: 768px){
+	.contenido-header {
+		text-align: left;
+	}
+}
+
+.contenido-header h1{
+	color: white;
+	padding-bottom: 2rem;
+	max-width: 60rem; /* Así obligamos a separar el texto y que pase a la línea de abajo */
+	line-height: 5rem; /* Es la separación entre el inter-lineado de la frase */
+}
+
+.barra {
+		padding-top: 3rem; /* Espacio dentro del elemento */
+	}
+
+@media (min-width: 768px) {
+	.barra {
+		display: flex; /* Hace que se pueda poner un contenido al lado del otro, deshabilitando el block, in-line... Solo afecta al primer nivel de hijos */
+		justify-content: space-between; /* Permite alinear dos elementos, uno a la izquierda y el otro a la derecha  */
+		padding-top: 3rem; /* Espacio dentro del elemento */
+		align-items: center; /* Alinea verticalmente tanto el logo como los enlaces */
+	}
+}
+
+/** Navegación **/
+.navegacion a { /* Defino una clase y luego cojo los hijos de los elementos */
+	color: white; /* Define el color del contenido */
+	text-decoration: none; /* Elimina la decoración por defecto de HTML */
+	font-size: 1.8rem; /* Tamaño de la letra /1.8 rem = 18px */
+	margin-right: 2rem; /* Separación a la derecha con el siguiente elemento */
+	display: block;
+	font-size: 2.2rem;
+	padding-bottom: 1.5rem;
+	margin-top: 2rem;
+}
+
+@media (min-width: 768px){
+	.navegacion a {
+		display: inline-block; /* Para que vuelva a su posición al hacerse grande */
+		font-size: 1.8rem;
+		margin-right: 2rem;
+	}
+
+	.navegacion a: last-of-type { /* El las-of-type selecciona el ultimo elemento de la etiqueta "a". Esto elimina la última separación del elemento "a" para quitarle el margin a la derecha ya que no hace nada */
+	margin: 0;
+}
+}
+
+.navegacion a:hover { /* Cambia las propiedas cuando pasamos el cursor por encima del elemento */
+	color: green;
+}
+
+/** Mobile Menu **/
+.mobile-menu img {
+	width: 3rem;
+}
+
+@media (min-width: 768px) {
+	.mobile-menu img {
+		display: none;
+	}
+}
+
+.navegacion:target { /* Esto permite que cuando demos click al icono de navegacion se mostrará el NAV */
+	display: block;
+}
+
+.navegacion {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.navegacion {
+		display: block;
+	}
+}
+
+/** Iconos Nosotros **/
+@media (min-width: 768px) {
+	.iconos-nosotros {
+		display:flex;
+		justify-content: space-between;
+	}
+}
+
+.icono {
+	text-align: center; /* Centra el contenido de dentro */
+}
+
+@media (min-width: 768px) {
+	.icono {
+		flex-basis: calc(33.3% - 1rem);
+	}
+}
+
+.icono h3 {
+	text-transform: uppercase; /* Convierte el contenido en Mayúsculas */
+}
+
+/** Anuncios **/
+@media (min-width: 768px) {
+	.contenedor-anuncios {
+		display:flex;
+		justify-content: space-between;
+		flex-wrap: wrap; /* Por defecto este comando está en no-wrap haciendo que si hay más contenido en la página web hacia los lados lo incluya. De esta manera el contenido que no cabe lo coloca debajo */
+	}
+}
+
+.anuncio {
+	flex-grow: 0; /* Si el contenido puede, va ha crecer si flex-grow está en 1 */
+	flex-shrink: 0; /* Ese comando por defecto está en 1, lo que quiere decir que en caso de que sea necesario, el contenedor se econgerá, si lo mantenemos en 0 el contenedor no se encogerá */
+	flex-basis: calc(33.3% - 1rem);
+	border: 1px solid #B5B5B5; /* Este comando permite reducir de 3 a 1 los comandos para crear un borde, definiendo el tamaño, tipo y color */
+	background-color: #F5F5F5;
+	margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+	.anuncio {
+		flex: 0 0 calc(33.3% - 1rem); /* Incluye los valores flex-grow, flex-shrink y flex-basis */
+	}
+}
+
+.contenido-anuncio {
+	padding: 2rem; /* Aplica el padding en todas direcciones en sentido de las agujas del reloj*/
+}
+
+.precio {
+	color: green;
+	font-weight: 700; /* Todos los párrafos por defecto su font-weight es 400, los headings de 700 */
+}
+
+.iconos-caracteristicas {
+	list-style: none; /* Elimina el estilo de las listas por defecto */
+	padding: 0;
+	display: flex;
+	justify-content: space-evenly;
+	max-width: 500px;
+	flex: 1;
+}
+
+.iconos-caracteristicas li {
+	flex: 1;
+}
+
+.ver-todas {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/** Contacto home **/
+.imagen-contacto {
+	background-image: url(practica1/img/encuentra.jpg);
+	background-position: center center;
+	background-size: cover;
+	height: 40rem;
+	display: flex;
+	align-items: center;
+}
+
+.contenido-contacto {
+	flex: 0 0 95%; /* Es un factor de crecimiento, detecta cuanto tamaño hay disponible, cuantos elementos hay y le assigna X píxeles dependiendo el tamaño y los elemntos */
+	color: white;
+}
+
+.contenido.contacto {
+	font-size: 1.6rem;
+}
+
+/** Sección inferior **/
+@media (min-width: 768px){
+	.seccion-inferior {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.seccion-inferior .blog {
+		flex-basis: 60%;
+	}
+
+	.seccion-inferior .testimoniales {
+		flex-basis: calc(40% - 2rem);
+	}
+}
+
+.entrada-blog {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.entrada-blog: last-of-type {
+	margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+	.entrada-blog .imagen {
+		flex-basis: 40%;
+	}
+
+	.entrada-blog .texto-entrada {
+		flex-basis: calc(60% - 3rem);
+	}
+}
+
+.texto-entrada a {
+	color: black;
+	text-decoration: none;
+}
+
+.texto-entrada h4 {
+	margin: 0;
+	line-height: 1.4;
+}
+
+.texto-entrada h4::after { /* Es un pseudoelemento, no se pueden seleccionar desde el browser, crea un contenido despúes del elemento seleccionado */
+	content: '';
+	display: block; /* Permite agregar width y altura */
+	width: 15rem;
+	height: .5rem;
+	background-color: #71B100;
+	margin-top: 1rem;
+}
+
+.texto-entrada span {
+	color: #E08709;
+}
+
+/** Testimoniales **/
+.testimonial {
+	background-color: #71B100;
+	font-size: 2.4rem;
+	padding: 2rem;
+	color: white;
+	border-radius: 2rem; /* Permite redondear el contenedor */
+}
+
+.testimonial p {
+	text-align: right;
+}
+
+.testimonial blockquote {
+	position: relative; /* Permite posiconar un elemento en un sitio específico, al padre se le debe añadir position relative, y al hijo position absolute */
+	padding-left: 5rem;
+	font-weight: 300;
+}
+
+.testimonial blockquote::before { /* Crea un contenido antes del elemento seleccionado */
+	content: '';
+	background-image: url(practica1/img/comilla.svg);
+	width: 4rem;
+	height: 4rem;
+	display: block;
+	position: absolute;
+	left: -1rem;
+}
+
+/** Footer **/
+.site-footer {
+	background-color: #333333;
+	margin: 0;
+}
+
+.contenedor-footer {
+	padding: 3rem 0;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.contenedor-footer {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.site-footer nav {
+	display: none; /* Sirve para quitar el elemento del footer en caso de que no queramos que se muestre por móvil */
+}
+
+@media (min-width: 768px) {
+	.site-footer nav {
+		display: block; /* Permite que se muestre el nav del footer cuando se abre desde una aplicación grande */
+	}
+}
+
+
+.copyright { /* Todos los párrafos tienen un margin por defecto */
+	margin: 0;
+	color: white;
+}
+
+/** PÁGINAS INTERNAS **/
+
+/** Nosotros **/
+@media (min-width: 768px) {
+	.contenido-nosotros {
+		display: grid; /* Es muy parecido al Flex-Box, se utiliza para distribuir el espacio del contenedor */
+		grid-template-columns: 50% 50%; /* Este comando hace que los elementos de dentro del contenedor se posicionen en forma de columna ocupando el 50 por ciento del espacio cada uno */
+		grid-column-gap: 2rem; /* Define la separación entre cada columna */
+	}
+}
+
+.texto-nosotros blockquote {
+	font-weight: 900;
+	font-size: 2rem;
+	margin: 0; /* El blockquote tiene un margin por defecto */
+	padding: 1rem 0 3rem 0;
+}
+
+/** Anuncio **/
+.resumen-propiedad {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/** Contacto **/
+.contacto p {
+	font-size: 1.4rem;
+	color: #4F4F4F;
+	margin: 2rem 0 0 0; /* Por defecto todos los párrafos tienen margin */
+}
+
+legend {
+	font-size: 2rem;
+	color: #333333;
+}
+
+label {
+	font-weight: 700;
+	text-transform: uppercase;
+	display: block; /* Hace que tome todo el espacio disponible y así no se ponen encima del otro */
+}
+
+input:not([type="submit"]),
+textarea,
+select{ /*Lo que está entre llaves es un selector de atributo, sirve para seleccionar un input en concreto (input [type="text"]), en el caso de input:none() sirve para excluir el input que no quieres modificar */
+	padding: 1rem;
+	display: block;
+	width: 100%;
+	background-color: #E1E1E1;
+	margin-bottom: 1rem;
+	border: none; /* Elimina el borde */
+	border-radius: 1rem;
+}
+
+input[type:"radio"]{ /*Esto se debe a que tenemos todos los inputs con un width del 100%, y en este caso no queremos que ocupe esto */
+	width: auto; /* Coge únicamente el espacio que requiere */
+	margin: 0;
+}
+
+select { /* Esto sirve para poder incluir el select dentro de los cambios del input */
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+textarea {
+	height: 20rem;
+}
+
+.forma-contacto {
+	max-width: 30rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+

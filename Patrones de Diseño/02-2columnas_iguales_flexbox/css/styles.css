@@ -1,0 +1,51 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Hacer dos columnas iguales FlexBox */
+@media (min-width: 400px) { /*Tamaño estándard teléfono */
+    .dos-columnas {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .entrada-blog {
+        flex-basis: calc(50% - 1rem); /* Se define el ancho de los contenedores, el calc sirve para decirle que tome el espacio completo (50%) menos 1 rem, y 1 rem en cada entrada serían 2 rem (20 pixeles) */
+    }
+}

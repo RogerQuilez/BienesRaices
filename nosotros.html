@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Practica 1</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css"> <!-- Una librería muy útil para el CSS -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+	<header class="site-header"> <!-- El id se usa para darle una identificación concreta a un etiqueta, los ID's no pueden ser reutilizables, solo puede haver uno por página-->
+		<div class="contenedor contenido-header">
+
+			<div class="barra"> <!-- La clase "barra" es el nuevo standard para posicionar elementos -->
+				<a href="index.html"> 
+					<img src="practica1/img/logo.svg" alt="Logotipo de Bienes Raices"> 
+				</a>
+
+				<div class="mobile-menu">
+					<a href="#navegacion">
+						<img src="practica1/img/barras.svg" alt="Icono Menú">
+					</a>
+				</div>
+
+				<nav id="navegacion" class="navegacion"> <!-- Es un contenedor que se usa para meter los enlaces de la página web-->
+					<a href="nosotros.html">Nosotros</a>
+					<a href="anuncios.html">Anuncios</a>
+					<a href="blog.html">Blog</a>
+					<a href="contacto.html">Contacto</a>
+				</nav>
+			</div> 
+		</div> <!-- contenedor -->
+	</header>
+
+	<main class="contenedor">
+		<h1 class="centrar-texto fw-300">Conoce Sobre Nosotros</h1>
+
+		<div class="contenido-nosotros">
+			<div class="imagen">
+				<img src="practica1/img/nosotros.jpg" alt="Imagen Sobre Nosotros">
+			</div>
+			<div class="texto-nosotros">
+				<blockquote>25 Años de Experiencia</blockquote>
+				<p>Mauris bibendum augue sit amet ante scelerisque tempor. Ut dui lorem, efficitur a tellus vel, pretium tincidunt tellus. Donec lectus ipsum, aliquam ut orci et, semper tincidunt libero. Duis pharetra a libero vel dignissim. Pellentesque dolor est, aliquet at nunc non, ornare lobortis lacus. Mauris ut massa facilisis, 
+				Morbi ac velit id tellus venenatis gravida et ut lorem. Nunc eu elit ligula. Nulla a egestas massa. Phasellus lobortis, velit vitae lacinia finibus, massa neque malesuada erat, sit amet mollis dolor mauris ac dolor.</p>
+
+				<p>Nulla cursus sed diam sit amet mollis. Donec rutrum ut erat quis tincidunt. Nam maximus euismod enim laoreet mollis. Praesent quis risus accumsan, ullamcorper metus ac, facilisis neque. Nunc leo ligula, scelerisque in elementum ac, volutpat sed metus. Nullam suscipit eu nisl non fermentum. Nullam et vestibulum purus, sit amet molestie nisl.</p>
+			</div>
+			</div>
+	</main>
+
+	<section class="contenedor seccion"> <!-- El section se usa cuando su siguiente hijo es un encabezado-->
+		<h2 class="fw-300 centrar-texto">Más sobre nosotros</h2>
+
+		<div class="iconos-nosotros">
+			<div class="icono"> <!-- Es el contenedor más genérico de todos, se usa para dividir apartados dentro de un section, main, nav... -->
+				<img src="practica1/img/icono1.svg" alt="Icono Seguridad">
+				<h3>Seguridad</h3> <!--La "class" está destinada a ser reutilizable, podiendo usar una clase en varias etiquetas-->
+				<!-- Una etiqueta puede tener dos clases dentro de la misma para diferentes cosas sin ningún problema siempre y cuando esten separados por un espacio(encabezado, mayúsculas)-->
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+
+			<div class="icono">
+				<img src="practica1/img/icono2.svg" alt="Icono Mejor Precio">
+				<h3>El Mejor Precio</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+
+			<div class="icono">
+				<img src="practica1/img/icono3.svg" alt="Icono a Tiempo">
+				<h3>A Tiempo</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="site-footer seccion"> <!--Esta etiqueta también se podría usar como footer de un contenedor-->
+		<div class="contenedor contenedor-footer">
+			<nav class="navegacion">
+				<a href="nosotros.html">Nosotros</a>
+				<a href="anuncios.html">Anuncios</a>
+				<a href="blog.html">Blog</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+
+			<p class="copyright">Todos los Derechos Reservados, 2020 &copy;</p>
+		</div>
+	</footer>
+</body>
+</html>
